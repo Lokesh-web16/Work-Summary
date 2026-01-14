@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Summary - Support Engineer Application</title>
+    <link rel="icon" href="https://www.amazon.com/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #232f3e;
+            background: #fff;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #232f3e 0%, #37475a 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 6px solid #ff9900;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        
+        .header .subtitle {
+            color: #ff9900;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .header .target-role {
+            background: #ff9900;
+            color: #232f3e;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        /* Section Styling */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            background: #232f3e;
+            color: #ff9900;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: "▸";
+            color: #ff9900;
+        }
+        
+        /* Role Header */
+        .role-header {
+            background: linear-gradient(90deg, #ff9900 0%, #ffad33 100%);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .role-header h3 {
+            color: #232f3e;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .role-header .company {
+            color: #232f3e;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+        
+        .role-header .duration {
+            background: #232f3e;
+            color: #ff9900;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        
+        /* STAR Cards */
+        .star-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff9900;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .star-card h4 {
+            color: #232f3e;
+            font-size: 16px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed #ff9900;
+        }
+        
+        .star-item {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+        
+        .star-label {
+            min-width: 90px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-align: center;
+            margin-right: 15px;
+        }
+        
+        .star-s { background: #ff9900; color: #232f3e; }
+        .star-t { background: #37475a; color: #fff; }
+        .star-a { background: #146eb4; color: #fff; }
+        .star-r { background: #067d62; color: #fff; }
+        
+        .star-content {
+            flex: 1;
+            color: #444;
+            font-size: 14px;
+        }
+        
+        /* Additional Achievements */
+        .achievements-list {
+            background: #fff;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .achievements-list h4 {
+            color: #232f3e;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        
+        .achievements-list ul {
+            list-style: none;
+        }
+        
+        .achievements-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        
+        .achievements-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .achievements-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff9900;
+            font-weight: bold;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #ff9900;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box h4 {
+            color: #232f3e;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            color: #444;
+            font-size: 14px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 20px;
+            }
+            .star-card, .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>WORK SUMMARY</h1>
+        <div class="subtitle">LOKESH T, Investigation Specialist</div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+        <div class="section-title">PROFESSIONAL SUMMARY</div>
+        <div class="highlight-box">
+            <p>Results-driven <strong>Investigation Specialist</strong> with <strong>1+ year at Amazon</strong> and prior technical support experience. Proven track record in <strong>SQL query optimization</strong>, <strong>workflow automation</strong>, and <strong>cross-functional collaboration</strong>. Demonstrated ability to handle L4-level escalations as an L3, work with senior leadership (L5-L7), and drive process improvements. Strong foundation in <strong>python</strong>, <strong>scripting</strong>, <strong>debugging</strong> and <strong>technical documentation</strong> directly aligned with Support Engineer role requirements.</p>
+        </div>
+    </div>
+
+    <!-- Amazon Experience -->  
+    <div class="section">
+        <div class="section-title">AMAZON EXPERIENCE</div>
+        
+        <div class="role-header">
+            <h3>Investigation Specialist</h3>
+            <div class="company">Amazon Development Center | Amazon Warehousing & Distribution (AWD)</div>
+            <span class="duration">📅 Sep 2024 – Present</span>
+        </div>
+
+        <!-- STAR 1 -->
+        <div class="star-card">
+            <h4>⚡ SQL Query Optimization <a href="https://shorturl.at/3fyfb">(Amazon Hubble)</a></h4>
+            <div class="star-item">
+                <span class="star-label star-s">SITUATION</span>
+                <span class="star-content">Investigation processes were severely hampered by inefficient SQL queries that took <strong>8 minutes per run</strong>, causing delays in resolving stuck or incorrect ASNs and impacting team productivity.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-t">TASK</span>
+                <span class="star-content">Optimize query performance in Amazon Hubble to improve investigation efficiency and reduce time spent waiting for data retrieval.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-a">ACTION</span>
+                <span class="star-content">Analyzed existing query structure, identified bottlenecks and rebuilt custom SQL queries with optimized joins and filtering logic. Created multiple specialized queries including SSCC code redirection query.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-r">RESULT</span>
+                <span class="star-content">Reduced query runtime from <strong>8 minutes to 2.5 minutes (69% improvement)</strong>. Significantly decreased investigation time, improved team productivity, and established reusable query templates for the team.</span>
+            </div>
+        </div>
+
+        <!-- STAR 2 -->
+        <div class="star-card">
+            <h4>🔧 Slack Workflow Automation Tool <a href="https://shorturl.at/PUxUQ">(Slack Workflow)</a></h4>
+            <div class="star-item">
+                <span class="star-label star-s">SITUATION</span>
+                <span class="star-content">L3 teams lacked an efficient system to raise and track issues with L4 investigators. Manual assignment process was time-consuming and led to delays in issue resolution.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-t">TASK</span>
+                <span class="star-content">Create a streamlined, automated process to improve issue assignment and reduce resolution turnaround time.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-a">ACTION</span>
+                <span class="star-content">Developed a Slack-based workflow tool that automatically assigned issues to appropriate L4 investigators based on issue type and availability. Also initiated a rerouting mechanism to auto-push SIM cases to correct partner teams.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-r">RESULT</span>
+                <span class="star-content">Reduced resolution turnaround time significantly, eliminated manual assignment steps, reduced duplication of effort and improved visibility of case status across teams.</span>
+            </div>
+        </div>
+
+        <!-- STAR 3 -->
+        <div class="star-card">
+            <h4>📄 Technical Documentation & Communication Enhancement</h4>
+            <div class="star-item">
+                <span class="star-label star-s">SITUATION</span>
+                <span class="star-content">SIM communications lacked standardization and readability, causing confusion for internal stakeholders and making it difficult to parse critical information quickly.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-t">TASK</span>
+                <span class="star-content">Improve the clarity, professionalism, and consistency of technical communications across the team.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-a">ACTION</span>
+                <span class="star-content">Implemented Markdown formatting for SIM communications. Discovered and introduced a table generator tool <a href="https://shorturl.at/kBwHd">(Table Format Generator)</a> to standardize formatting. Created policy documentation for Inbound blurbs and modified quick response blurbs.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-r">RESULT</span>
+                <span class="star-content">Enhanced readability of technical communications, created professional-looking documentation and established a new formatting standard that was adopted by the team.</span>
+            </div>
+        </div>
+
+        <!-- STAR 4 -->
+        <div class="star-card">
+            <h4>🚀 Cross-Team Escalation Management (Above-Level Work)</h4>
+            <div class="star-item">
+                <span class="star-label star-s">SITUATION</span>
+                <span class="star-content">A complex seller escalation involving cartons rejected twice required investigation. The seller was unable to determine root cause, and this type of escalation was typically handled by L4 associates.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-t">TASK</span>
+                <span class="star-content">Determine the root cause and provide resolution for the seller, coordinating across multiple teams and leadership levels.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-a">ACTION</span>
+                <span class="star-content">Took ownership of the escalation as an L3. Collaborated with <strong>L7 team lead</strong>, <strong>L6 AWD site leadership</strong>, and <strong>L5 account representative</strong> to investigate the issue. Coordinated communication across all stakeholders and drove the investigation to completion.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-r">RESULT</span>
+                <span class="star-content">Successfully resolved the complex escalation, identified root cause for the seller, and demonstrated ability to handle above-level work and collaborate effectively with senior leadership (L5-L7).</span>
+            </div>
+        </div>
+
+        <!-- Additional Achievements -->
+        <div class="achievements-list">
+            <h4>📌 Additional Key Achievements</h4>
+            <ul>
+                <li>Created policy documentation for Inbound blurbs <a href="https://shorturl.at/IlRZl">(Internal Policy Page)</a></li>
+                <li>Implemented automated daily SIM data reporting to reduce manual workload and SIM volume</li>
+                <li>Consistently appreciated by manager and peers for problem-solving mindset and proactive communication</li>
+                <li>Recognized with positive feedback from team leaders for initiative and ownership</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mark Anthony Experience -->
+    <div class="section">
+        <div class="section-title">PRIOR EXPERIENCE</div>
+        
+        <div class="role-header">
+            <h3>Technical Assistant</h3>
+            <div class="company">Mark Anthony Ventures | Real Estate Startup</div>
+            <span class="duration">📅 Jun 2023 – Jun 2024</span>
+        </div>
+
+        <!-- STAR 5 -->
+        <div class="star-card">
+            <h4>🖥️ End-to-End Technical Support (Sole Tech Resource)</h4>
+            <div class="star-item">
+                <span class="star-label star-s">SITUATION</span>
+                <span class="star-content">As a growing startup with <strong>40-45 employees</strong>, the company had limited technical resources. Sales representatives relied heavily on a CRM/calling application to access customer data and make calls.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-t">TASK</span>
+                <span class="star-content">Provide comprehensive technical support for all employees as the <strong>only technical resource</strong> in the organization.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-a">ACTION</span>
+                <span class="star-content">Established a support system to handle application issues, troubleshoot customer data tools and assist with backend data processing.</span>
+            </div>
+            <div class="star-item">
+                <span class="star-label star-r">RESULT</span>
+                <span class="star-content">Successfully served as sole technical support for <strong>entire 40-45 person organization</strong>, ensuring minimal downtime, maximum productivity for sales team and smooth business operations.</span>
+            </div>
+        </div>
+
+        <!-- Additional Experience -->
+        <div class="achievements-list">
+            <h4>📌 Additional Responsibilities</h4>
+            <ul>
+                <li>Collaborated with developers on website projects, gaining exposure to deployment processes</li>
+                <li>Provided technical support for client documentation systems</li>
+                <li>Served as primary technical point of contact between development team and business users</li>
+                <li>Managed user access and permissions for critical business applications</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Alignment Box -->
+    <div class="section">
+        <div class="section-title">ROLE ALIGNMENT</div>
+        <div class="highlight-box">
+            <h4>Why I'm a Strong Fit for Support Engineer</h4>
+            <p>
+                ✅ <strong>1+ year technical support & software experience</strong> : meets basic qualification<br>
+                ✅ <strong>SQL scripting & query optimization</strong> : directly relevant to job responsibilities<br>
+                ✅ <strong>Debugging & incident response experience</strong> : handling TTs and PEs daily<br>
+                ✅ <strong>Automation mindset</strong> : built workflow tools, automated processes<br>
+                ✅ <strong>Cross-team collaboration</strong> : proven ability to work with L5-L7 leadership<br>
+                ✅ <strong>Process improvement focus</strong> : SOP improvements, documentation standards
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
